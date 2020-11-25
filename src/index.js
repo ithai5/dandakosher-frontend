@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Layout from "./component/Layout";
+import Header from "./component/Header";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+const layout = <Header/>
+
+ReactDOM.render(layout,
   document.getElementById('root')
 );
 
