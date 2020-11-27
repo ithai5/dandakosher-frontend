@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import ContactusForm from "./ContactusForm";
 
 class ContactUsPage extends Component {
     render() {
@@ -30,16 +31,7 @@ class ContactUsPage extends Component {
                             <h1>Write Us</h1>
                             <p>Please, fill out the following information:</p>
                             <div className="dark">
-                                <form action="">
-                                    <label htmlFor="name">Name: </label>
-                                    <input type="text" placeholder="Enter name..."/><br/>
-                                    <label htmlFor="telephone">Phone:</label>
-                                    <input type="tel" placeholder="Enter phone number..."/><br/>
-                                    <label htmlFor="email">Email: </label>
-                                    <input type="email" placeholder="Enter e-mail..."/><br/>
-                                    <label htmlFor="message">Message:</label>
-                                    <input type="text" placeholder="Write your message..." size="500"/><br/>
-                                </form>
+                                <ContactusForm/>
                             </div>
                         </aside>
                     </div>

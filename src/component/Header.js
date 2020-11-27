@@ -22,7 +22,12 @@ class Header extends Component {
             {
                 "name": `Contact Us`,
                 "className": 'button-bar'
-            }],
+            },
+            {
+                "name": 'Q&A',
+                "className": 'button-bar'
+            }
+        ],
         currentPage:'Home'
         }
 
