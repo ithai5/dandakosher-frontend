@@ -67,12 +67,8 @@ class Header extends Component {
     render(){
         return (
             <div>
-                <header>
+                <header id='nev-bar'>
                     <div className="container">
-                        <div id="branding">
-                            <h1>DAN<span className="highlight">kosher</span> <i className="fas fa-star-of-david"></i>
-                            </h1>
-                        </div>
                         <nav>
                             <ul>
                                 {this.createNavButton()}

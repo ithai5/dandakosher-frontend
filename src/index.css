@@ -2,9 +2,25 @@ body{
   font: 15px/1.5 Arial, Helvetica, sans-serif;
   padding: 0;
   margin: 0;
-  background-color: #fff5d7
+  background-color: #fff5d7;
 }
+#main-container{
+  position: relative;
 
+}
+#nev-bar{
+  z-index: 1;
+}
+#main-pic{
+  z-index: 1;
+}
+#branding{
+  position:absolute;
+  z-index:100;
+  left:0%;
+  top:2%;
+
+}
 /* Global */
 .container{
   width: 80%;
@@ -15,6 +31,11 @@ button{
   cursor: pointer;
 }
 
+#content-box {
+  margin: 0px;
+  width: 274px;
+  height: 164px;
+}
 ul{
   margin: 0;
   padding: 0;

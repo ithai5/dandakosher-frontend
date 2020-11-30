@@ -1,21 +1,67 @@
 import React, {Component} from 'react';
-
+import axios from 'axios'
 class ContactusForm extends Component {
+
+    constructor(props) {
+        super(props);
+        this.state ={
+            fullName :'',
+            phone: '',
+            isSubscribed: true,
+            email:'',
+            subject: '',
+            content:'',
+        };
+
+        this.handleInputChange = this.handleInputChange.bind(this);
+    }
+
+    handleInputChange(event){
+        const target = event.target
+        const value = target.type ==='checkbox' ? target.checked : target.value;
+        const name = target.name
+
+        this.setState({
+            [name] : value
+        })
+    }
+
+
+    submitForm =event =>{
+        alert("your mail has been sent")
+        event.preventDefault();
+        console.log(this.state)
+        axios
+            .post('http://localhost:8080/api/sendMessage',this.state)
+            .then( response =>{
+                console.log('message sent')
+            })
+            .catch(error =>{
+                console.log('error')
+            })
+    }
+
+
+
 
     render() {
 
         return (
             <div>
-                <form name='contact-form' id='sendMail'>
+                <form onSubmit={this.submitForm}>
                     <label htmlFor="name">Name: </label>
-                    <input type="text" placeholder="Enter name..." /><br/>
+                    <input name='fullName' type="text" value={this.state.fullName} placeholder="Enter name..." onChange={this.handleInputChange}/><br/>
                     <label htmlFor="telephone">Phone:</label>
-                    <input type="tel" placeholder="Enter phone number..."/><br/>
+                    <input name='phone' type="tel" value={this.state.phone}placeholder="Enter phone number..." onChange={this.handleInputChange}/><br/>
                     <label htmlFor="email">Email: </label>
-                    <input type="email" placeholder="Enter e-mail..."/><br/>
+                    <input name='email' type="email" value={this.state.email} placeholder="Enter e-mail..." onChange={this.handleInputChange}/><br/>
+                    <label htmlFor="isSubscribed">Subscribe to the newsletter</label>
+                    <input name='isSubscribed' type="checkbox" value={this.state.isSubscribed} onChange={this.handleInputChange} checked/><br/>
+                    <label htmlFor="message">Subject:</label>
+                    <input name='subject' type="text" value={this.state.subject}placeholder="Write your message..." size="500" onChange={this.handleInputChange}/><br/>
                     <label htmlFor="message">Message:</label>
-                    <input type="text" placeholder="Write your message..." size="500"/><br/>
-                    <input type="submit" value='submit'/>
+                    <textarea id='content-box' name='content'  value={this.state.content}placeholder="Write your message..." rows='4' cols='40' onChange={this.handleInputChange}/><br/>
+                    <input type="submit" value='submit' />
                 </form>
             </div>
         );
