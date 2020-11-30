@@ -12,7 +12,7 @@ class Header extends Component {
                 "className": 'button-bar-current',
             },
             {
-                "name": 'Events',
+                "name": 'Menu',
                 "className": 'button-bar',
             },
             {

@@ -9,7 +9,7 @@ class Changeable extends Component {
         if(this.props.currentPage === 'Home'){
             return <Home/>
         }
-        if(this.props.currentPage === 'Events'){
+        if(this.props.currentPage === 'Menu'){
             return <EventsPage/>
         }
         if(this.props.currentPage ==='Contact Us'){
