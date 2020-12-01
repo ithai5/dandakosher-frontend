@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import ShowDish from "./ShowDish";
+import ContactusForm from "./ContactusForm";
 
 class MenuContent extends Component {
     state = {
@@ -23,7 +24,7 @@ class MenuContent extends Component {
         const menuList = this.state.menuContent
         if(menuList != null){
             return(
-                menuList.map( menu => <li><ShowDish menu={menu} /></li>)
+                menuList.map( menu => <ShowDish menu={menu} />)
                 //<Product product = {product} />
             )
         }
@@ -31,16 +32,31 @@ class MenuContent extends Component {
             return <div>loading</div>
     }
 
-
-
-
-
-
     render(){
         return (
             <div>
                 <br/>
-                {this.createList()}
+                <form>
+                    <label>
+                        <input type="number" min="4" name="totalPeople"/>
+                        How many people are you ordering for?
+                    </label>
+
+                    <label>
+                        <select>
+                            <option value="Hannukkah">Hannukkah</option>
+                            <option value="Bar Mitzvah">Bar Mitzvah</option>
+                            <option value="Wedding">Wedding</option>
+                        </select>
+                        What event?
+                    </label>
+
+                    {this.createList()}
+                    <label>
+                        <ContactusForm/>
+                        Fill in your personal info
+                    </label>
+                </form>
             </div>
         )
     }
