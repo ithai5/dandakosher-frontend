@@ -1,30 +1,46 @@
 import React, {Component} from 'react';
 import ShowDish from "./ShowDish";
 import ContactusForm from "./ContactusForm";
+import axios from "axios";
 
 class MenuContent extends Component {
-    state = {
-        loading: true,
-        menuContent: null,
-        menuName: this.props.menuName
-    };
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            loading: true,
+            menuName: this.props.menuName,
+            sendInformation : {},
+            eventName : "Hanukkah",
+            totalPeople : 4
+        };
+
+        this.handleInputChange = this.handleInputChange.bind(this);
+    }
 
 
 
 
-    async componentWillMount(){  //get request form api and retrieve Json file
-        const url = 'http://localhost:8080/api/menuContent/'+ this.state.menuName;
-        const response = await fetch(url);
-        const data = await response.json();
-        this.setState({menuContent : data, loading:false})
+    async componentDidMount(){  //get request form api and retrieve Json file
+        const menuUrl = 'http://localhost:8080/api/menuContentDish/'+ this.state.menuName;
+        const menuResponse = await fetch(menuUrl);
+        const menuData = await menuResponse.json();
+
+        const extrasUrl = 'http://localhost:8080/api/extras/' + this.state.menuName;
+        const extrasResponse = await fetch(extrasUrl);
+        const extrasData = await extrasResponse.json();
+
+        this.setState({menuContent : menuData, extrasContent : extrasData, loading : false})
 
     }
 
-    createList() {
+
+    //Load the list of dishes associated with a certain menu
+    loadMenuContent() {
         const menuList = this.state.menuContent
         if(menuList != null){
             return(
-                menuList.map( menu => <ShowDish menu={menu} />)
+                menuList.map( menu => <ShowDish menu={menu} isChecked={true} isDisabled={true} />)
                 //<Product product = {product} />
             )
         }
@@ -32,30 +48,72 @@ class MenuContent extends Component {
             return <div>loading</div>
     }
 
+    //Load the list of dishes not associated with the specific menu
+    //So they can be added as extras
+    loadMenuExtras() {
+        const extrasList = this.state.extrasContent;
+        if (extrasList != null) {
+            return (
+                extrasList.map( extra => <ShowDish menu={extra} isDisabled={false} />)
+            )
+        } else
+            return <div>loading</div>
+    }
+
+    //Not yet
+    loadEvents() {
+
+    }
+
+    submitForm =event =>{
+        alert("button click cliiick")
+        event.preventDefault();
+        console.log(this.state)
+        /*
+        axios
+            .post('http://localhost:8080/api/createReservation',this.state)
+            .then( response =>{
+                console.log('message sent')
+            })
+            .catch(error =>{
+                console.log('error')
+            })
+
+         */
+    }
+
+    handleInputChange(event){
+        const target = event.target
+        const value = target.type ==='checkbox' ? target.checked : target.value;
+        const name = target.name
+
+        this.setState({
+            [name] : value
+        })
+    }
+
     render(){
         return (
             <div>
                 <br/>
-                <form>
+                <form onSubmit={this.submitForm}>
                     <label>
-                        <input type="number" min="4" name="totalPeople"/>
                         How many people are you ordering for?
+                        <input type="number" min="4"  name="totalPeople" value={this.state.totalPeople} onChange={this.handleInputChange}/>
                     </label>
-
+                    <br/>
                     <label>
-                        <select>
-                            <option value="Hannukkah">Hannukkah</option>
+                        What event?
+                        <select name="eventName" value={this.state.eventName} onChange={this.handleInputChange}>
+                            <option value="Hanukkah">Hanukkah</option>
                             <option value="Bar Mitzvah">Bar Mitzvah</option>
                             <option value="Wedding">Wedding</option>
                         </select>
-                        What event?
                     </label>
-
-                    {this.createList()}
-                    <label>
-                        <ContactusForm/>
-                        Fill in your personal info
-                    </label>
+                    {this.loadMenuContent()}
+                    {this.loadMenuExtras()}
+                    <br/>
+                    <input type="submit" value="Submit"/>
                 </form>
             </div>
         )

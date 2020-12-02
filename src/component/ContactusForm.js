@@ -56,9 +56,9 @@ class ContactusForm extends Component {
                     <label htmlFor="email">Email: </label>
                     <input name='email' type="email" value={this.state.email} placeholder="Enter e-mail..." onChange={this.handleInputChange}/><br/>
                     <label htmlFor="isSubscribed">Subscribe to the newsletter</label>
-                    <input name='isSubscribed' type="checkbox" value={this.state.isSubscribed} onChange={this.handleInputChange} checked/><br/>
+                    <input name='isSubscribed' type="checkbox" value={this.state.isSubscribed} onChange={this.handleInputChange}/><br/>
                     <label htmlFor="message">Subject:</label>
-                    <input name='subject' type="text" value={this.state.subject}placeholder="Write your message..." size="500" onChange={this.handleInputChange}/><br/>
+                    <input name='subject' type="text" value={this.state.subject}placeholder="Write your message..." onChange={this.handleInputChange}/><br/>
                     <label htmlFor="message">Message:</label>
                     <textarea id='content-box' name='content'  value={this.state.content}placeholder="Write your message..." rows='4' cols='40' onChange={this.handleInputChange}/><br/>
                     <input type="submit" value='submit' />
