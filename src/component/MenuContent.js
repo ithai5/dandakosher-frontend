@@ -10,7 +10,6 @@ class MenuContent extends Component {
         this.state = {
             loading: true,
             menuName: this.props.menuName,
-            sendInformation : {},
             eventName : "Hanukkah",
             totalPeople : 4
         };
@@ -65,26 +64,30 @@ class MenuContent extends Component {
 
     }
 
-    submitForm =event =>{
+    submitForm = event =>{
         alert("button click cliiick")
         event.preventDefault();
-        //console.log(this.state)
-        this.getSelectedCheckboxValues()
-        /*
+        console.log(this.state)
+        console.log(this.getSelectedCheckboxValues())
+        const reservationInfo = {
+            totalPeople: this.state.totalPeople,
+            menuName: this.state.menuName,
+            eventName: this.state.eventName,
+            extras: this.getSelectedCheckboxValues()
+        }
+        console.log(reservationInfo)
+
         axios
-            .post('http://localhost:8080/api/createReservation',this.state)
-            .then( response =>{
+            .post('http://localhost:8080/api/createReservation', reservationInfo)
+            .then( () =>{
                 console.log('message sent')
             })
             .catch(error =>{
                 console.log('error')
             })
-
-         */
     }
 
     handleInputChange(event){
-        alert("We in input change")
         const target = event.target
         const value = target.type ==='checkbox' ? target.checked : target.value;
         const name = target.name
@@ -96,7 +99,8 @@ class MenuContent extends Component {
 
     getSelectedCheckboxValues() {
         const checkboxes = document.getElementsByClassName('chosen')
-        console.log(checkboxes)
+        
+        return checkboxes
     }
 
     render(){
