@@ -40,7 +40,7 @@ class MenuContent extends Component {
         const menuList = this.state.menuContent
         if(menuList != null){
             return(
-                menuList.map( menu => <ShowDish menu={menu} isChecked={true} isDisabled={true} />)
+                menuList.map( menu => <ShowDish menu={menu} isChecked={true} isDisabled={true} menuName={this.state.menuName}/>)
                 //<Product product = {product} />
             )
         }
@@ -54,7 +54,7 @@ class MenuContent extends Component {
         const extrasList = this.state.extrasContent;
         if (extrasList != null) {
             return (
-                extrasList.map( extra => <ShowDish menu={extra} isDisabled={false} />)
+                extrasList.map(extra => <ShowDish menu={extra} menuName={this.state.menuName}/>)
             )
         } else
             return <div>loading</div>
@@ -68,7 +68,8 @@ class MenuContent extends Component {
     submitForm =event =>{
         alert("button click cliiick")
         event.preventDefault();
-        console.log(this.state)
+        //console.log(this.state)
+        this.getSelectedCheckboxValues()
         /*
         axios
             .post('http://localhost:8080/api/createReservation',this.state)
@@ -83,6 +84,7 @@ class MenuContent extends Component {
     }
 
     handleInputChange(event){
+        alert("We in input change")
         const target = event.target
         const value = target.type ==='checkbox' ? target.checked : target.value;
         const name = target.name
@@ -90,6 +92,11 @@ class MenuContent extends Component {
         this.setState({
             [name] : value
         })
+    }
+
+    getSelectedCheckboxValues() {
+        const checkboxes = document.getElementsByClassName('chosen')
+        console.log(checkboxes)
     }
 
     render(){

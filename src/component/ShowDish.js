@@ -7,16 +7,24 @@ class ShowDish extends Component {
         dishId : this.props.menu.id,
         isDisabled : this.props.isDisabled,
         isChecked : this.props.isChecked,
-
+        menuName : this.props.menuName,
+        chosenExtraDish : "notChosen",
     };
 
+    clicking() {
+       if (this.state.chosenExtraDish === "notChosen") {
+           this.setState({chosenExtraDish : "chosen"})
+       } else {
+           this.setState({chosenExtraDish : "notChosen"})
+       }
+    }
 
     render() {
         return (
             <div>
                 <label>
-                    <input type="checkbox" name={this.state.isDisabled + this.state.dishId} value={this.state.dishId}
-                           checked={this.state.isChecked} disabled={this.state.isDisabled} onChange={this.handleInputChange}/>
+                    <input className={this.state.chosenExtraDish} type="checkbox" value={this.state.dishId} name={this.state.dish}
+                           checked={this.state.isChecked} disabled={this.state.isDisabled} onChange={() => this.clicking()}/>
                     {this.state.dish}
                 </label>
             </div>
