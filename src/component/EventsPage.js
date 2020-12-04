@@ -9,28 +9,19 @@ class EventsPage extends Component {
             <div>
                 <section id="boxes" >
                     <div className="container">
-                        <div className="box" onClick={this.onOpenModal}>
-                            <div> <i className="fas fa-star"/><h3>Basic</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ea corrupti nesciunt esse.</p>
-                            </div>
-                                <div>
-                                    <Mdl menuName={'Basic'}/>
-                                </div>
                         <div className="box">
-                            <div> <i className="fas fa-star"></i><i className="fas fa-star"></i><h3>Deluxe</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ea corrupti nesciunt esse.</p>
-                            </div>
                                 <div>
-                                    <Mdl menuName={'Deluxe'}/>
+                                    <Mdl menuName={'Basic'} buttonText={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ea corrupti nesciunt esse.'} level={1}/>
                                 </div>
                         </div>
                         <div className="box">
-                            <div> <i className="fas fa-star"></i><i className="fas fa-star"></i><i className="fas fa-star"></i><h3>Deluxe Plus</h3>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ea corrupti nesciunt esse.</p>
-                            </div>
-                        </div>
                                 <div>
-                                    <Mdl menuName={'DeluxePlus'}/>
+                                    <Mdl menuName={'Deluxe'} buttonText={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ea corrupti nesciunt esse.'} level={'2'}/>
+                                </div>
+                        </div>
+                        <div className="box">
+                                <div>
+                                    <Mdl menuName={'DeluxePlus'} buttonText={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ea corrupti nesciunt esse.'} level={'3'}/>
                                 </div>
                         </div>
                     </div>

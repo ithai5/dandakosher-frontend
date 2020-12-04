@@ -2,7 +2,7 @@ body{
   font: 15px/1.5 Arial, Helvetica, sans-serif;
   padding: 0;
   margin: 0;
-  background-color: #fff5d7;
+  background-color: #ffffff;
 }
 #main-container{
   position: relative;
@@ -63,7 +63,7 @@ ul{
   padding: 0;
 }
 .button-bar {
-  color: #ffffff;
+  color: #242582;
   text-transform: uppercase;
   font-size: 16px;
   background-color: transparent;
@@ -79,8 +79,6 @@ ul{
   outline: none;
 
 }
-
-
 
 .button_1{
   height: 36px;
@@ -102,8 +100,9 @@ ul{
 }
 
 /* Header */
+/*rgb(86, 121, 236)*/
 header{
-  background: rgb(86, 121, 236);
+  background: #ffffff;
   color: #ffffff;
   padding-top: 30px;
   min-height: 70px;
@@ -111,15 +110,13 @@ header{
 }
 
 header a{
-  color: #ffffff;
+  color: black;
   text-decoration: none;
   text-transform: uppercase;
   font-size: 16px;
 }
-.nev.bar{
 
 
-}
 header ul{
   margin: 0;
   padding: 0;
@@ -146,15 +143,16 @@ header nav{
   margin-top: 10px;
 }
 
-header .highlight, header .current button-bar{
-  color: #ff5e6c ;
+header.highlight, header.current button-bar{
+  color: darkcyan ;
   font-weight: bold;
   border: none;
 }
 
 header .button-bar:hover{
-  color: salmon;
+  color: #ff5e6c ;
   font-weight: bold;
+  font-size: larger;
 }
 
 
@@ -339,4 +337,9 @@ footer{
     transform: scale(0.96);
     opacity: 0;
   }
+}
+
+.buttonModal {
+  border: none;
+  background: ;
 }
