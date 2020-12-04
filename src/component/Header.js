@@ -64,10 +64,12 @@ class Header extends Component {
                     <NavBarButton name={button.name} className = {button.className}/>
                 </span>))
     }
+
+
     render(){
         return (
             <div>
-                <header id='nev-bar'>
+                <header className='header' id='nev-bar'>
                     <div className="container">
                         <nav>
                             <ul>

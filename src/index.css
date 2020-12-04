@@ -44,10 +44,17 @@ body{
 
  */
 /* Global */
+
 .container{
   width: 80%;
   margin: auto;
   overflow: hidden;
+  align-content: center;
+
+
+  justify-content: center;
+
+
 }
 button{
   cursor: pointer;
@@ -197,8 +204,15 @@ header .button-bar:hover{
   float: right;
   margin-top: 15px;
 }
+ /*nev bar*/
 
-#newsletter input[type="email"]{
+
+#newsletter input[type="email"] {
+  padding: 4px;
+  height: 25px;
+  width: 250px;
+}
+#newsletter input[type="text"]{
   padding: 4px;
   height: 25px;
   width: 250px;
@@ -210,6 +224,7 @@ header .button-bar:hover{
 }
 
 #boxes .box{
+
   float: left;
   width: 30%;
   padding: 15px;
@@ -338,8 +353,16 @@ footer{
     opacity: 0;
   }
 }
+@media screen and (max-width: 950px) {
+  #branding{
+    top: 10%;
+    left: -16%;
 
-.buttonModal {
-  border: none;
-  background: ;
+  }
+
 }
+
+
+
+
+
