@@ -9,6 +9,7 @@ body{
 
 }
 #nev-bar{
+  position: sticky;
   z-index: 1;
 }
 #main-pic{
@@ -50,11 +51,19 @@ body{
   margin: auto;
   overflow: hidden;
   align-content: center;
-
-
+  text-align: center;
+  align-items: center;
   justify-content: center;
+}
 
-
+.flex-container{
+  display: flex;
+  flex-direction: row;
+}
+@media (max-width: 800px) {
+  .flex-container {
+    flex-direction: column;
+  }
 }
 button{
   cursor: pointer;
@@ -111,9 +120,9 @@ ul{
 header{
   background: #ffffff;
   color: #ffffff;
-  padding-top: 30px;
-  min-height: 70px;
+  padding: 15px;
   border-bottom: #ff5e6c 3px solid;
+  position: sticky;
 }
 
 header a{
@@ -165,16 +174,17 @@ header .button-bar:hover{
 
 /*Showcase*/
 #showcase{
-  min-height: 400px;
+
   /*background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Food_in_Israel.jpg/1024px-Food_in_Israel.jpg) no-repeat 0 -200px;*/
-  background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Food_in_Israel.jpg/1024px-Food_in_Israel.jpg);
+  background-image: url(https://i.ibb.co/xFNnDq2/ktzizot.png);
   background-color: rgba(255, 255, 255, 0.486);
   background-blend-mode: overlay;
   background-repeat: no-repeat;
   background-position-x: 0;
-  background-position-y: -200px;
+  background-position-y: 0;
   background-size: cover;
   text-align: center;
+
   color: #9e1a1a;
 }
 
@@ -225,8 +235,8 @@ header .button-bar:hover{
 
 #boxes .box{
 
+
   float: left;
-  width: 30%;
   padding: 15px;
   text-align: center;
 }
@@ -359,8 +369,20 @@ footer{
     left: -16%;
 
   }
+}
+
+  @media screen and (max-width: 900px) {
+
+    .sidenav li{
+      text-align: center;
+      float: none;
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
 
 }
+
 
 
 
