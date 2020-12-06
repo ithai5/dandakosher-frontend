@@ -1,10 +1,11 @@
-import React from 'react';
+
+/*import React from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 export default function Carousel2() {
-        var settings = {
+        const settings = {
             dots: true,
             infinite: true,
             speed: 500,
@@ -45,3 +46,5 @@ export default function Carousel2() {
                 </Slider>
             );
 }
+
+ */

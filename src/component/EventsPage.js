@@ -30,7 +30,7 @@ class EventsPage extends Component {
                         </div>
                     </div>
                 </section>
-                <section><Carousel2/></section>
+
             </div>
         );
     }

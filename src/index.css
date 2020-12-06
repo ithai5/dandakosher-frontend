@@ -403,7 +403,7 @@ footer{
 
 
 @media screen and (max-width: 950px) {
-  .header button {display: none;}
+
   .header button.icon {
     float: right;
     display: block;
@@ -438,7 +438,7 @@ footer{
   transition: transform 0.5s ease-in-out;
 }
 
-img {
+img-carousel {
   width: 500px;
   height: 500px;
   object-fit: cover;

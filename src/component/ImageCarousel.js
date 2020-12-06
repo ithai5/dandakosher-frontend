@@ -7,7 +7,7 @@ class ImageCarousel extends Component {
 
             <div className="carousel">
                 <div className="image-container" id="imgs">
-                    <img src="/Volumes/Macintosh HD/Users/Ignacio/Desktop/perc.png" alt="image1"/>
+                    <img className='img-carousel' src="/Volumes/Macintosh HD/Users/Ignacio/Desktop/perc.png" alt="image1"/>
                     <img src="https://ibb.co/mB4BkkR" alt="image2"/>
                     <img src="https://ibb.co/hCmQsCM" alt="image3"/>
                     <img src="https://ibb.co/z7HbnvL" alt="image4"/>
