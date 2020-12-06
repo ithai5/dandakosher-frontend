@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import MenuContent from "./MenuContent";
 import Mdl from './Mdl';
+import Carousel2 from "./Carousel2";
+
 
 class EventsPage extends Component {
 
@@ -28,6 +30,7 @@ class EventsPage extends Component {
                         </div>
                     </div>
                 </section>
+                <section><Carousel2/></section>
             </div>
         );
     }
