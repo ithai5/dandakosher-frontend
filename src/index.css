@@ -8,10 +8,6 @@ body{
   position: relative;
 
 }
-#nev-bar{
-  position: sticky;
-  z-index: 1;
-}
 #main-pic{
   z-index: 1;
 }
@@ -21,29 +17,6 @@ body{
   left: 0%;
   top: 2%;
 }
-/*
-.popup-content {
-  margin: auto;
-  background: deeppink;
-  width: 100%;
-  padding: 5px;
-}
-.popup-arrow {
-  color: rgb(255, 255, 255);
-}
-[role='tooltip'].popup-content {
-  width: 500px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 0px 3px;
-}
-
-.popup-overlay {
-  background: rgba(0, 0, 0, 0.5);
-}
-[data-popup='tooltip'].popup-overlay {
-  background: transparent;
-}
-
- */
 /* Global */
 
 .container{
@@ -97,9 +70,9 @@ ul{
 }
 
 .button_1{
-  height: 36px;
   background: #ff5e6c;
   border: 0;
+  height: 36px;
   padding-left: 20px;
   padding-right: 20px;
   color: #ffffff;
@@ -125,13 +98,6 @@ header{
   position: sticky;
 }
 
-header a{
-  color: black;
-  text-decoration: none;
-  text-transform: uppercase;
-  font-size: 16px;
-}
-
 
 header ul{
   margin: 0;
@@ -144,6 +110,8 @@ header li{
   display: inline;
   padding: 0 20px 0 20px;
 }
+
+
 
 header #branding{
   float: left;
@@ -217,6 +185,18 @@ header .button-bar:hover{
  /*nev bar*/
 
 
+#newsletter input[type="submit"] {
+  background-color:#ff5e6c;
+  color: #242582;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}
+
 #newsletter input[type="email"] {
   padding: 4px;
   height: 25px;
@@ -227,6 +207,13 @@ header .button-bar:hover{
   height: 25px;
   width: 250px;
 }
+
+#newsletter input[type="submit"] {
+  padding: 4px;
+  height: 25px;
+  width: 250px;
+}
+
 
 /*Boxes*/
 #boxes{
@@ -363,24 +350,55 @@ footer{
     opacity: 0;
   }
 }
-@media screen and (max-width: 950px) {
+
+
+@media screen and (max-width: 950px){
+
+  #newsletter form{
+    float: none;
+    display: grid;
+  }
+
+  #newsletter form
+  .sidenav li{
+    text-align: center;
+    float: none;
+    width: 100%;
+    height: auto;
+    position: relative;
+  }
   #branding{
-    top: 10%;
-    left: -16%;
+    top: 38.5%;
+    left: -8%;
 
   }
-}
 
-  @media screen and (max-width: 900px) {
+  header li{
+    float: none;
+    display: grid;
+    padding: 0 20px 0 20px;
+    margin: 25px
+  }
+  header ul{
+    display: grid;
 
-    .sidenav li{
-      text-align: center;
-      float: none;
-      width: 100%;
-      height: auto;
-      position: relative;
-    }
+  }
+  header .container{
+    float: top;
+  }
 
+
+  .nav-menu.active{
+    background: #282c34;
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 1;
+  }
+
+  header nav{
+    float: none;
+  }
 }
 
 

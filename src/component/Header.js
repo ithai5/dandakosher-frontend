@@ -72,7 +72,7 @@ class Header extends Component {
                 <header className='header' id='nev-bar'>
                     <div className="container">
                         <nav>
-                            <ul className='sidenav'>
+                            <ul>
                                 {this.createNavButton()}
                             </ul>
                         </nav>
