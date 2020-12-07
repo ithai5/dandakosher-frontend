@@ -409,6 +409,14 @@ footer{
   }
 }
 
+.contactUsForm{
+  float: left;
+}
+
+.contactUsForm-input{
+  float: right;
+  width: 215px;
+}
 
 @media screen and (max-width: 950px) {
 
