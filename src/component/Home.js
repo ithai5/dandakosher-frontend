@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import Box from "./Box";
+import {bindReporter} from "web-vitals/dist/lib/bindReporter";
 
 class Home extends Component {
     render() {
@@ -25,7 +26,9 @@ class Home extends Component {
                         icon = {'fas fa-pen fa-3x'}
                         text = {'Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ea corrupti nesciunt esse.\n' +
                         ' Ut enim ad minim veniam'}/>
+
             </div>
+
         );
     }
 }

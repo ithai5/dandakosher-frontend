@@ -49,17 +49,27 @@ class ContactusForm extends Component {
         return (
             <div>
                 <form onSubmit={this.submitForm} >
-                    <label className='contactUsForm' htmlFor="name" >Name:</label>
-                    <input className='contactUsForm-input' name='fullName' type="text" value={this.state.fullName} placeholder="Enter name..." onChange={this.handleInputChange}/><br/>
-                    <label className='contactUsForm' htmlFor="telephone">Phone:</label>
-                    <input className='contactUsForm-input' name='phone' type="tel" value={this.state.phone}placeholder="Enter phone number..." onChange={this.handleInputChange}/><br/>
-                    <label className='contactUsForm' htmlFor="email">Email: </label>
-                    <input className='contactUsForm-input' name='email' type="email" value={this.state.email} placeholder="Enter e-mail..." onChange={this.handleInputChange}/><br/>
-                    <label className='contactUsForm' htmlFor="message">Subject:</label>
-                    <input className='contactUsForm-input' name='subject' type="text" value={this.state.subject}placeholder="Write your message..." onChange={this.handleInputChange}/><br/>
+                    <div className='input-form'>
+                        <label className='contactUsForm' htmlFor="name" >Name:</label>
+                        <input className='contactUsForm-input' name='fullName' type="text" value={this.state.fullName} placeholder="Enter name..." onChange={this.handleInputChange}/><br/>
+                    </div>
+                    <div className='input-form'>
+                        <label className='contactUsForm' htmlFor="telephone">Phone:</label>
+                        <input className='contactUsForm-input' name='phone' type="tel" value={this.state.phone}placeholder="Enter phone number..." onChange={this.handleInputChange}/><br/>
+                    </div>
+                    <div className='input-form'>
+                        <label className='contactUsForm' htmlFor="email">Email: </label>
+                        <input className='contactUsForm-input' name='email' type="email" value={this.state.email} placeholder="Enter e-mail..." onChange={this.handleInputChange}/><br/>
+                    </div>
+                    <div className='input-form'>
+                        <label className='contactUsForm' htmlFor="message">Subject:</label>
+                        <input className='contactUsForm-input' name='subject' type="text" value={this.state.subject}placeholder="Write your message..." onChange={this.handleInputChange}/><br/>
+                    </div>
                     <textarea id='content-box' name='content'  value={this.state.content}placeholder="Write your message..." rows='4' cols='40' onChange={this.handleInputChange}/><br/>
-                    <label className='contactUsForm' htmlFor="isSubscribed">Subscribe to the newsletter</label>
-                    <input name='isSubscribed' type="checkbox" value={this.state.isSubscribed} onChange={this.handleInputChange}/><br/>
+                    <div className='input-form'>
+                        <label className='contactUsForm' htmlFor="isSubscribed">Subscribe to the newsletter</label>
+                        <input name='isSubscribed' type="checkbox" value={this.state.isSubscribed} onChange={this.handleInputChange}/><br/>
+                    </div>
                     <input type="submit" value='submit' />
                 </form>
 

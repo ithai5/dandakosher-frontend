@@ -43,7 +43,7 @@ class SubscribeOption extends Component {
                     <form onSubmit={this.submitForm} >
                         <input name = 'fullName' value={this.state.fullName} type="text" placeholder='Enter Your Name....' onChange={this.handleInputChange}/>
                         <input name ='email' value={this.state.email} type="email" placeholder="Enter E-mail..." onChange={this.handleInputChange}/>
-                        <input type="submit" />
+                        <input type="submit" value='SUBSCRIBE' className ='subscribe-btn'/>
                     </form>
                 </div>
             </section>

@@ -93,6 +93,7 @@ class Header extends Component {
                         <Changeable currentPage = {this.state.currentPage}/>
                     </div>
                 </section>
+                <br/><br/><br/><br/><br/>
                 <Footer/>
             </div>
         );
