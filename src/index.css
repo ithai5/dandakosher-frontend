@@ -249,6 +249,9 @@ footer{
   color: #ffffff;
   background-color: rgb(86, 121, 236);
   text-align: center;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 }
 
 /*Modal*/
@@ -416,6 +419,11 @@ footer{
 }
 
 @media screen and (max-width: 950px) {
+
+  .flex-container{
+    display: grid;
+    flex-direction: row;
+  }
   .header.responsive {position: relative;}
   .header.responsive button.icon {
     position: absolute;
