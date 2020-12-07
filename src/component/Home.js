@@ -4,8 +4,7 @@ import Box from "./Box";
 class Home extends Component {
     render() {
         return (
-            <div className='container'>
-                <div className='flex-container'>
+            <div className='flex-container'>
                     <Box
                         className = {'box'}
                         displayName = {'Events'}
@@ -26,7 +25,6 @@ class Home extends Component {
                         icon = {'fas fa-pen fa-3x'}
                         text = {'Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ea corrupti nesciunt esse.\n' +
                         ' Ut enim ad minim veniam'}/>
-                    </div>
             </div>
         );
     }

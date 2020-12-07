@@ -28,7 +28,6 @@ body{
   align-items: center;
   justify-content: center;
 }
-
 .flex-container{
   display: flex;
   flex-direction: row;
@@ -95,7 +94,8 @@ header{
   color: #ffffff;
   padding: 15px;
   border-bottom: #ff5e6c 3px solid;
-  position: sticky;
+  position: fixed;
+  width: 100%;
 }
 
 
@@ -176,11 +176,13 @@ header .button-bar:hover{
 
 #newsletter h1{
   float: left;
+  margin-right: 30px;
 }
 
 #newsletter form{
   float: right;
   margin-top: 15px;
+
 }
  /*nev bar*/
 
@@ -194,18 +196,17 @@ header .button-bar:hover{
   display: inline-block;
   font-size: 16px;
   cursor: pointer;
-  text-align: center;
 }
 
 #newsletter input[type="email"] {
   padding: 4px;
-  height: 25px;
-  width: 250px;
+  height: 15px;
+  width: 238px;
 }
 #newsletter input[type="text"]{
   padding: 4px;
-  height: 25px;
-  width: 250px;
+  height: 15px;
+  width: 238px;
 }
 
 #newsletter input[type="submit"] {
@@ -217,15 +218,15 @@ header .button-bar:hover{
 
 /*Boxes*/
 #boxes{
+
   margin-top: 20px;
 }
 
 #boxes .box{
-
-
   float: left;
   padding: 15px;
   text-align: center;
+
 }
 
 /*Sidebar*/
@@ -394,6 +395,10 @@ footer{
     opacity: 1;
     transition: all 0.5s ease;
     z-index: 1;
+  }
+
+  header{
+    position: static;
   }
 
   header nav{
