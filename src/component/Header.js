@@ -94,7 +94,6 @@ class Header extends Component {
                         <Changeable currentPage = {this.state.currentPage}/>
                     </div>
                 </section>
-                <Carousel2/>
                 <br/><br/><br/><br/><br/>
                 <Footer/>
             </div>

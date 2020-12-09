@@ -11,7 +11,6 @@ export default function Carousel2() {
             slidesToShow: 1,
             slidesToScroll: 1,
             fade: true,
-            centerPadding: "37%",
             centerMode: true,
             adaptiveHeight: true,
             autoplay: true,

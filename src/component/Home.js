@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import Box from "./Box";
+import Carousel2 from "./Carousel2";
 class Home extends Component {
     render() {
         return (
+            <>
             <div className='flex-container'>
                     <Box
                         className = {'box'}
@@ -25,7 +27,12 @@ class Home extends Component {
                         text = {'Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ea corrupti nesciunt esse.\n' +
                         ' Ut enim ad minim veniam'}/>
 
+
             </div>
+                <div className='carousel'>
+                    <Carousel2/>
+                </div>
+            </>
 
         );
     }
