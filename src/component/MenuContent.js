@@ -49,8 +49,6 @@ class MenuContent extends Component {
     }
 
     submitForm = event =>{
-        event.preventDefault();
-        console.log(this.state)
         const reservationInfo = {
             totalPeople: this.state.totalPeople,
             menuName: this.state.menuName,
@@ -64,6 +62,9 @@ class MenuContent extends Component {
             .post('http://localhost:8080/api/createReservation', reservationInfo)
             .then( () =>{
                 console.log('message sent')
+                alert('Your message has been sent to us thank you!')
+                event.default();
+
             })
             .catch(error =>{
                 console.log('error')
@@ -148,11 +149,11 @@ class MenuContent extends Component {
                     <br/>
                         {this.loadMenuExtras()}
                     <br/>
-                    <label>
-                        Your email:
+                    <div className='input-form'>
+                        <label> Your email: </label>
                         <input type="email" name="email" value={this.state.email} onChange={this.handleInputChange} placeholder="johnhansen@gmail.dk"/>
-                    </label>
-                    <textarea name="content" onChange={this.handleInputChange} placeholder="Any additional info here..." rows="5" cols="30"></textarea>
+                    </div>
+                    <textarea id='content-box'name="content" onChange={this.handleInputChange} placeholder="Any additional info here..." rows="5" cols="30"></textarea>
                     <br/>
                     <input type="submit" value="Submit"/>
                 </form>

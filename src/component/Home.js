@@ -1,7 +1,5 @@
 import React, {Component} from 'react';
 import Box from "./Box";
-import {bindReporter} from "web-vitals/dist/lib/bindReporter";
-
 class Home extends Component {
     render() {
         return (
