@@ -54,6 +54,7 @@ class MenuContent extends Component {
             menuName: this.state.menuName,
             eventName: this.state.eventName,
             extras: this.getSelectedCheckboxValues(),
+            fullName: this.state.fullName,
             email: this.state.email,
             content: this.state.content,
         }
@@ -134,26 +135,42 @@ class MenuContent extends Component {
                 <form onSubmit={this.submitForm}>
                     <label>
                         How many people are you ordering for?
+                        <br/>
                         <input type="number" min="4"  name="totalPeople" value={this.state.totalPeople} onChange={this.handleInputChange}/>
                     </label>
 
                     <br/>
                     <label>
                         What event?
+                        <br/>
                         {this.loadEventList()}
                     </label>
+                    <br/>
 
+                    Menu includes:
                     <br/>
                         {this.loadMenuContent()}
+                    <br/>
 
+                    Optional extras:
                     <br/>
                         {this.loadMenuExtras()}
                     <br/>
-                    <div className='input-form'>
-                        <label> Your email: </label>
+
+                    <br/>
+                    <label>
+                        Your name:
+                        <br/>
+                        <input type="text" name="fullName" value={this.state.fullName} onChange={this.handleInputChange} placeholder="Full name"/>
+                    </label>
+                    <br/>
+                    <label>
+                        Your email:
+                        <br/>
                         <input type="email" name="email" value={this.state.email} onChange={this.handleInputChange} placeholder="johnhansen@gmail.dk"/>
-                    </div>
-                    <textarea id='content-box'name="content" onChange={this.handleInputChange} placeholder="Any additional info here..." rows="5" cols="30"></textarea>
+                    </label>
+                    <br/>
+                    <textarea name="content" onChange={this.handleInputChange} placeholder="Any additional info here..." rows="5" cols="30"></textarea>
                     <br/>
                     <input type="submit" value="Submit"/>
                 </form>
