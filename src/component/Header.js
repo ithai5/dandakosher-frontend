@@ -4,6 +4,7 @@ import Box from "./Box";
 import SubscribeOption from "./SubscribeOption";
 import Changeable from "./Changeable";
 import Footer from "./Footer";
+import Carousel2 from "./Carousel2";
 class Header extends Component {
     state = {
         list:[
@@ -93,6 +94,7 @@ class Header extends Component {
                         <Changeable currentPage = {this.state.currentPage}/>
                     </div>
                 </section>
+                <Carousel2/>
                 <br/><br/><br/><br/><br/>
                 <Footer/>
             </div>

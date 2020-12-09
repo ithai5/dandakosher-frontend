@@ -1,5 +1,5 @@
 
-/*import React from 'react';
+import React from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -8,13 +8,20 @@ export default function Carousel2() {
         const settings = {
             dots: true,
             infinite: true,
-            speed: 500,
             slidesToShow: 1,
             slidesToScroll: 1,
-            arrows: true
+            fade: true,
+            centerPadding: "37%",
+            centerMode: true,
+            adaptiveHeight: true,
+            autoplay: true,
+            pauseOnFocus: false,
+            pauseOnHover: true,
         };
 
+
             return (
+
                 <Slider {...settings}>
                     <div>
                         <img src="https://i.ibb.co/HYyNfV1/ktzizot.png" border="0" alt="Image1"/>
@@ -44,7 +51,6 @@ export default function Carousel2() {
                         <img src="https://i.ibb.co/CtQtggw/Untitled.png" alt="Image9" border="0"/>
                     </div>
                 </Slider>
+
             );
 }
-
- */
