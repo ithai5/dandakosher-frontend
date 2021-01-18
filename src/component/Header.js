@@ -82,7 +82,7 @@ class Header extends Component {
                 <section id="showcase">
                     <div className="container">
                         <Box
-                            bigDisplay={'Kosher Catering Service'}
+                            bigDisplay={'blabla Catering Service'}
                             text={'Lorem ipsum dolor sit amet consectetur adipisicing elit. Qui ea corrupti nesciunt esse. Ea\n' +
                             'aut at, vero itaque quas architecto vitae quia voluptatum non, alias libero saepe. Animi,\n' +
                             'vero a!'}/>
